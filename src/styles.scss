@@ -21,7 +21,7 @@ html,
 body {
     margin: 0;
     padding: 0;
-    background: linear-gradient(90deg, #8af8dd, #f198d3);
+    background: var(--color-2);
     font-family: var(--font-family-1);
     font-size: var(--font-size-1);
     color: var(--color-4);
