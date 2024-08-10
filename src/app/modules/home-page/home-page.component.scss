@@ -1,22 +1,4 @@
-.card-collection {
-    grid-gap: 1em;
-    display: grid;
-    gap: 1em;
-    grid-template-columns: repeat(auto-fill, minmax(323px, 1fr));
-    margin: 6%;
-    min-height: 700px;
-    position: relative;
-
-
-    img {
-        width: 100%;
-        object-fit: cover;
-        border: 2px solid #fffdfd;
-        flex-grow: 3;
-
-    }
-}
-
+/* Estilo para el buscador */
 .search-form {
     display: flex;
     align-items: center;
@@ -31,6 +13,10 @@
         width: 500px;
     }
 
+    .search:focus {
+        border-color: #007bff;
+    }
+
     .search-button {
         display: flex;
         align-items: center;
@@ -40,5 +26,57 @@
         border-radius: 50%;
         cursor: pointer;
         font-size: 12px;
+    }
+
+}
+
+/* Estilo para la colección de tarjetas */
+.card-collection {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    padding: 16px;
+    justify-content: center;
+    margin-top: 5%;
+}
+
+.card {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+    cursor: pointer;
+
+    &:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    }
+
+    .name_card {
+        padding: 10%;
+
+        a {
+            color: var(--color-black);
+            text-decoration: none;
+            font-weight: bold;
+            display: block;
+            margin-top: 8px;
+            transition: color 0.3s;
+
+            &:hover {
+                color: #007bff;
+            }
+        }
+    }
+}
+
+/* Media queries para dispositivos móviles */
+@media (max-width: 600px) {
+    .search-form {
+        .search {
+            width: 250px;
+        }
     }
 }

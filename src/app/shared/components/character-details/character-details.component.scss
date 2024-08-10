@@ -1,31 +1,53 @@
+$card-bg: #fff;
+$card-text-color: #000;
+$card-shadow: rgba(0, 0, 0, 0.2) 0px 4px 8px;
+$paragraph-color: #7c7878;
+
 .card {
-    background-color: white;
-    color: rgb(0, 0, 0);
+    background-color: var(--color-white);
+    color: var(--color-black);
     padding: 2em;
     cursor: pointer;
-    box-shadow: rgba(0, 0, 0, 0.5) 5px 4px 20px;
-    width: 200px;
+    box-shadow: $card-shadow;
+    width: 400px;
     display: flex;
     flex-direction: column;
     align-items: center;
+    border-radius: 10px;
+    transition: box-shadow 0.3s ease-in-out;
 
+    &:hover {
+        box-shadow: rgba(255, 12, 12, 0.4) 0px 8px 16px;
+    }
+
+    img {
+        width: 100%;
+        border-radius: 10px;
+        object-fit: cover;
+    }
 }
 
 .card_center {
     display: flex;
     justify-content: center;
+    align-items: center;
+    margin-top: 5%;
 }
 
 h2 {
     text-align: center;
-    font-family: var(--font-family-1);
+    font-family: var(--font-family-1, Arial, sans-serif);
     font-weight: bold;
+    margin-bottom: 1em;
+    color: var(--color-black);
 }
 
 p {
     text-align: center;
-    font-family: var(--font-family-1);
-    color: rgb(124, 120, 120);
+    font-family: var(--font-family-1, Arial, sans-serif);
+    color: $paragraph-color;
+    margin: 0.5em 0;
+
 }
 
 form {
@@ -33,10 +55,7 @@ form {
     display: flex;
     justify-content: center;
     flex-direction: column;
-    border-left: none;
-    border-top: none;
-    border-right: none;
+    border: none;
     text-align: center;
     gap: 1em;
-
 }
