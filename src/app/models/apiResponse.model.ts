@@ -1,4 +1,4 @@
-import { Character } from "./product.model";
+import { Character } from "./character.model";
 
 export interface ApiResponse {
     results: Character[]

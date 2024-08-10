@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { Character as Character } from '../../models/product.model';
+import { Character as Character } from '../../models/character.model';
 import { ProductApiService } from '../../product-api.service';
+
+
 
 @Component({
   selector: 'app-home-page',
