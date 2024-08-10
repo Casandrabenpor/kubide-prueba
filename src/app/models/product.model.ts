@@ -1,6 +1,7 @@
+export interface Character {
+  id: number;
+  name: string;
+  image: string;
+  url: string;
+}
 
-  
-export interface Pokemon {
-    name: string;
-    url: string;
-  }

@@ -5,8 +5,9 @@
     <button type="button" class="search-button">🔎</button>
 </form>
 <section class="card-collection">
-    <div *ngFor="let product of productsToShow" class="pokemon-card">
-        <div>{{ product.name }}</div>
-        <!-- <img [src]="getPokemonImage(product.url)" alt="{{ product.name }}" /> -->
+    <div *ngFor="let character of charactersToShow">
+        <div>{{ character.name }}</div>
+        <img [src]="character.image" alt="{{ character.name }}" />
+
     </div>
 </section>

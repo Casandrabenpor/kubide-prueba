@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Pokemon } from '../../models/product.model';
+import { Character as Character } from '../../models/product.model';
 import { ProductApiService } from '../../product-api.service';
 
 @Component({
@@ -8,31 +8,39 @@ import { ProductApiService } from '../../product-api.service';
   styleUrl: './home-page.component.scss'
 })
 export class HomePageComponent implements OnInit{
-  products: Pokemon[] = [];
-  productsToShow: Pokemon[] = []; 
+  characters: Character[] = [];
+  charactersToShow: Character[] = []; 
 
   constructor(private productApiService: ProductApiService) {}
-
+  //Coge el get de los datos de la api
   ngOnInit(): void {
-    this.loadPokemons();
-  }
-
-  loadPokemons(): void {
-    this.productApiService.getPokemons().subscribe(pokemons => {
-      this.products = pokemons;
-      this.productsToShow = pokemons;
+    this.productApiService.getCharacters().subscribe(apiResponse => {
+      this.characters = apiResponse.results;
+      this.charactersToShow = apiResponse.results;
     });
   }
 
-  searchProduct(event: any): void {
-    const searchValue = event.target.value.toUpperCase();
-    console.log('Valor de búsqueda:', searchValue);
-    if (!searchValue) {
-      this.productsToShow = this.products;
-    } else {
-      this.productsToShow = this.products.filter((product) =>
-        product.name.toUpperCase().includes(searchValue)
-      );
+  // SEARCH
+  searchProduct(event: any) {
+    if (!event.target.value) {
+      this.charactersToShow = this.characters;
     }
+    this.charactersToShow = this.characters.filter((product) =>
+      product.name.toUpperCase().includes(event.target.value.toUpperCase())
+    );
   }
 }
+
+//  products: any[] = [];
+//   productsToShow: any[] = [];
+
+//   ngOnInit(): void {
+
+//     this.products = [
+//       { name: 'Pikachu' },
+//       { name: 'Bulbasaur' },
+//       { name: 'Charmander' }
+//     ];
+//     this.productsToShow = this.products;
+//   }
+

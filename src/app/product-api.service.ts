@@ -1,27 +1,25 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { map, Observable } from 'rxjs';
-import { Pokemon } from './models/product.model';
+import { Character } from './models/product.model';
+import { ApiResponse } from './models/apiResponse.model';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ProductApiService {
-  private readonly API_POKEMON_ENDPOINT = 'https://pokeapi.co/api/v2/pokemon';
+  private readonly API_CHARACTER_ENDPOINT = 'https://rickandmortyapi.com/api/character';
 
-  constructor(private http: HttpClient) {}
+  constructor(private httpClient: HttpClient) {}
 
-  // Método para obtener una lista de Pokémon
-  getPokemons(limit: number = 10): Observable<Pokemon[]> {
-    return this.http.get<{ results: Pokemon[] }>(`${this.API_POKEMON_ENDPOINT}?limit=${limit}`)
-      .pipe(
-        map(response => response.results)
-      );
-  }
 
-  // Método para obtener un Pokémon específico por su nombre
-  getPokemon(name: string): Observable<Pokemon> {
-    const endpoint = `${this.API_POKEMON_ENDPOINT}/${name}`;
-    return this.http.get<Pokemon>(endpoint);
-  }
+getCharacter(id: number | null): Observable<Character> {
+  let endpoint = `${this.API_CHARACTER_ENDPOINT}/${id}`;
+
+  return this.httpClient.get<Character>(endpoint);
+}
+
+getCharacters(): Observable<ApiResponse> {
+  return this.httpClient.get<ApiResponse>(this.API_CHARACTER_ENDPOINT);
+}
 }

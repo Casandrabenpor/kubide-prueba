@@ -4,6 +4,7 @@ import { BrowserModule, provideClientHydration } from '@angular/platform-browser
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomePageComponent } from './modules/home-page/home-page.component';
+import {  provideHttpClient } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -12,10 +13,10 @@ import { HomePageComponent } from './modules/home-page/home-page.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
+    AppRoutingModule
   ],
   providers: [
-    provideClientHydration()
+    provideHttpClient()
   ],
   bootstrap: [AppComponent]
 })
