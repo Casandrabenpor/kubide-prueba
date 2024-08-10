@@ -11,6 +11,7 @@ export class CharacterApiService {
 
   private readonly API_CHARACTER_ENDPOINT = 'https://rickandmortyapi.com/api/character';
 
+
   constructor(private httpClient: HttpClient) {}
 
 

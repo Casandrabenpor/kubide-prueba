@@ -21,6 +21,11 @@ constructor(
 ) {
   this.formGroup = formBuilder.group({
     name: [''],
+    status: [''],
+    species: [''],
+    type: [''],
+    gender:['']
+   
   });
 }
 
@@ -28,6 +33,7 @@ ngOnInit() {
   // Get a id de la ruta
   const routeParams = this.route.snapshot.paramMap;
   const characterIdFromRoute = routeParams.get('characterId');
+  console.log(`characterIdFromRoute: ${characterIdFromRoute}`);
 
   const characterId = characterIdFromRoute ? parseInt(characterIdFromRoute, 10) : null;
 
@@ -37,6 +43,11 @@ ngOnInit() {
       this.character = character;
       this.formGroup.setValue({
         name: character.name,
+        status: character.status,
+        species: character.species,
+        type: character.type,
+        gender: character.gender
+
     });
   });
   }

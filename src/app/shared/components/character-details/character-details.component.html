@@ -2,8 +2,13 @@
 <div class="card_center">
     <div class="card">
         <form [formGroup]="formGroup">
-            <label for="name">Name</label>
-            <p>{{character?.name}}</p>
+            <h2>{{ character?.name }}</h2>
+            <img [src]="character?.image" alt="{{ character?.name }}" />
+            <p><strong>Status:</strong> {{ character?.status }}</p>
+            <p><strong>Species:</strong> {{ character?.species }}</p>
+            <p><strong>Type:</strong> {{ character?.type }}</p>
+            <p><strong>Gender:</strong> {{ character?.gender }}</p>
+
         </form>
     </div>
 </div>
