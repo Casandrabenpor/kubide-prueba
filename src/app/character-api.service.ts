@@ -8,7 +8,6 @@ import { ApiResponse } from './models/apiResponse.model';
   providedIn: 'root'
 })
 export class CharacterApiService {
-
   private readonly API_CHARACTER_ENDPOINT = 'https://rickandmortyapi.com/api/character';
 
 
@@ -23,5 +22,9 @@ getCharacter(id: number | null): Observable<Character> {
 
 getCharacters(): Observable<ApiResponse> {
   return this.httpClient.get<ApiResponse>(this.API_CHARACTER_ENDPOINT);
+  }
+getNextCharacters(url:string): Observable<ApiResponse>{
+  return this.httpClient.get<ApiResponse>(url);
 }
+
 }

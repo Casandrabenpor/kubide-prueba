@@ -6,12 +6,14 @@ import { HomePageComponent } from './modules/home-page/home-page.component';
 import {  provideHttpClient } from '@angular/common/http';
 import { CharacterDetailsComponent } from './shared/components/character-details/character-details.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FooterComponent } from './shared/components/footer/footer.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomePageComponent,
-    CharacterDetailsComponent
+    CharacterDetailsComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
