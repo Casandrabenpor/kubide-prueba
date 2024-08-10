@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Character } from '../../../models/character.model';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
-import { ProductApiService } from '../../../product-api.service';
+import { CharacterApiService } from '../../../character-api.service';
 
 
 @Component({
@@ -11,12 +11,12 @@ import { ProductApiService } from '../../../product-api.service';
   styleUrl: './character-details.component.scss'
 })
 export class CharacterDetailsComponent implements OnInit {
-characters: Character | undefined;
+character: Character | undefined;
 formGroup: FormGroup;
 
 constructor(
   private route: ActivatedRoute,
-  private productApiService: ProductApiService,
+  private CharacterApiService: CharacterApiService,
   formBuilder: FormBuilder
 ) {
   this.formGroup = formBuilder.group({
@@ -25,18 +25,18 @@ constructor(
 }
 
 ngOnInit() {
-  // First get the product id from the current route.
+  // Get a id de la ruta
   const routeParams = this.route.snapshot.paramMap;
   const characterIdFromRoute = routeParams.get('characterId');
 
   const characterId = characterIdFromRoute ? parseInt(characterIdFromRoute, 10) : null;
 
   if (characterId !== null) {
-    // Find the product that corresponds with the id provided in route.
-    this.productApiService.getCharacter(characterId).subscribe((characters) => {
-      this.characters = characters;
+    // Encontrar el id correspondiente para la ruta
+    this.CharacterApiService.getCharacter(characterId).subscribe((character) => {
+      this.character = character;
       this.formGroup.setValue({
-        name: characters.name,
+        name: character.name,
     });
   });
   }

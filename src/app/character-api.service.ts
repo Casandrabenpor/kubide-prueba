@@ -1,13 +1,14 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { map, Observable } from 'rxjs';
+import { Observable } from 'rxjs';
 import { Character } from './models/character.model';
 import { ApiResponse } from './models/apiResponse.model';
 
 @Injectable({
   providedIn: 'root'
 })
-export class ProductApiService {
+export class CharacterApiService {
+
   private readonly API_CHARACTER_ENDPOINT = 'https://rickandmortyapi.com/api/character';
 
   constructor(private httpClient: HttpClient) {}
