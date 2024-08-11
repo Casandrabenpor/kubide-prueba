@@ -7,9 +7,6 @@
     --color-white: #FFFFFF;
     --color-red: #f36e6e;
     --color-cream: #FFF0C9;
-    --font-size-1: 1rem;
-    --font-size-2: 1.2rem;
-    --font-size-3: 1.8rem;
     --shadow-1: rgb(0 0 0 / 35%) 0px 8px 24px;
     --shadow-2: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
     --border-radius-1: .25rem;
@@ -24,9 +21,12 @@ body {
     padding: 0;
     background: var(--color-cream);
     font-family: var(--font-family-1);
-    font-size: var(--font-size-1);
     color: var(--color-black);
 
+}
+
+p {
+    font-size: 20px;
 }
 
 input,
@@ -40,4 +40,15 @@ button {
 h1 {
     text-align: center;
     font-family: var(--font-family-1);
+    font-size: 40px;
+    color: var(--color-dark);
+
+}
+
+/* Estilos responsivos */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 30px;
+        color: var(--color-dark);
+    }
 }

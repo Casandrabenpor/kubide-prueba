@@ -1,3 +1,14 @@
+#container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    img {
+        width: 200px;
+        height: 200px;
+    }
+}
+
 /* Estilo para el buscador */
 .search-form {
     display: flex;

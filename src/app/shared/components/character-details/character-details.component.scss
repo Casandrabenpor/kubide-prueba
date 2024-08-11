@@ -59,3 +59,12 @@ form {
     text-align: center;
     gap: 1em;
 }
+
+
+/* Media queries para dispositivos móviles */
+@media (max-width: 600px) {
+    .card {
+        width: 200px;
+        margin-top: 20%;
+    }
+}
