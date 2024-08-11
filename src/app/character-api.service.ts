@@ -25,6 +25,6 @@ getCharacters(): Observable<ApiResponse> {
   }
 getNextCharacters(url:string): Observable<ApiResponse>{
   return this.httpClient.get<ApiResponse>(url);
-}
+  }
 
 }

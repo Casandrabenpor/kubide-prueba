@@ -10,6 +10,7 @@ import { CharacterApiService } from '../../character-api.service';
 export class HomePageComponent implements OnInit{
   characters: Character[] = [];
   charactersToShow: Character[] = []; 
+  searchText: string = "";
   nextPageUrl: string = "";
   isLoading: boolean = false;
 
@@ -30,7 +31,9 @@ export class HomePageComponent implements OnInit{
   searchCharacter(event: any) {
     if (!event.target.value) {
       this.charactersToShow = this.characters;
+      this.searchText = "";
     }
+    this.searchText = event.target.value.toUpperCase();
     this.charactersToShow = this.characters.filter((character) =>
       character.name.toUpperCase().includes(event.target.value.toUpperCase())
     );
@@ -43,7 +46,9 @@ export class HomePageComponent implements OnInit{
     this.CharacterApiService.getNextCharacters(this.nextPageUrl)
     .subscribe(apiResponse => {
       this.characters = this.characters.concat(apiResponse.results);
-      this.charactersToShow = this.characters;
+      this.charactersToShow = this.characters.filter((character) =>
+        character.name.toUpperCase().includes(this.searchText)
+      );
       this.nextPageUrl = apiResponse.info.next;
       this.isLoading = false;
     });

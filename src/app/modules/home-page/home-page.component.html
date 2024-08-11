@@ -7,7 +7,9 @@
     <input type="text" class="search" (input)="searchCharacter($event)" placeholder="Search" />
     <button type="button" class="search-button">🔎</button>
 </form>
-<mat-spinner *ngIf="isLoading" class="spinner-container"></mat-spinner>
+<div *ngIf="isLoading" class="spinner-wrapper-center">
+    <mat-spinner />
+</div>
 <section class="card-collection">
     <div *ngFor="let character of charactersToShow" class="card">
 
