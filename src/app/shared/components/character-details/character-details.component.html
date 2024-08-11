@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <section class="card_center">
     <div class="card">
+        <i class="fa-solid fa-left-long back-icon" (click)="goBack()"></i>
         <form [formGroup]="formGroup">
             <h2>{{ character?.name }}</h2>
             <img [src]="character?.image" alt="{{ character?.name }}" />

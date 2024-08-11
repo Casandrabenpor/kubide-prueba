@@ -25,6 +25,13 @@ $paragraph-color: #7c7878;
         border-radius: 10px;
         object-fit: cover;
     }
+
+    .back-icon {
+        font-size: 30px;
+        cursor: pointer;
+        color: var(--color-red);
+        transition: color 0.3s ease, transform 0.3s ease;
+    }
 }
 
 .card_center {

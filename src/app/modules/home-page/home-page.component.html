@@ -7,8 +7,10 @@
     <input type="text" class="search" (input)="searchCharacter($event)" placeholder="Search" />
     <button type="button" class="search-button">🔎</button>
 </form>
+<mat-spinner *ngIf="isLoading" class="spinner-container"></mat-spinner>
 <section class="card-collection">
     <div *ngFor="let character of charactersToShow" class="card">
+
         <img [src]="character.image" alt="{{ character.name }}" />
         <div class="name_card">
             <a [routerLink]="['/characters', character.id]">
@@ -18,6 +20,6 @@
     </div>
 
 </section>
-<button (click)="showMore()">Mostrar Más</button>
+<button (click)="showMore()" class="btn_more">Mostrar Más</button>
 
 <app-footer></app-footer>

@@ -3,6 +3,7 @@ import { Character } from '../../../models/character.model';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
 import { CharacterApiService } from '../../../character-api.service';
+import { Location } from '@angular/common';
 
 
 @Component({
@@ -17,7 +18,8 @@ formGroup: FormGroup;
 constructor(
   private route: ActivatedRoute,
   private CharacterApiService: CharacterApiService,
-  formBuilder: FormBuilder
+  formBuilder: FormBuilder,
+  private location: Location
 ) {
   this.formGroup = formBuilder.group({
     name: [''],
@@ -28,7 +30,10 @@ constructor(
    
   });
 }
-
+//Botón función atras
+goBack() {
+  this.location.back();
+}
 ngOnInit() {
   // Get a id de la ruta
   const routeParams = this.route.snapshot.paramMap;

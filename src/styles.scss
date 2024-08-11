@@ -6,6 +6,7 @@
     --color-black: #000000;
     --color-white: #FFFFFF;
     --color-red: #f36e6e;
+    --color-blue: #007bff;
     --color-cream: #FFF0C9;
     --shadow-1: rgb(0 0 0 / 35%) 0px 8px 24px;
     --shadow-2: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
@@ -34,7 +35,7 @@ button {
     cursor: pointer;
     font-family: var(--font-family-1);
     text-align: center;
-    justify-self: center;
+    justify-content: center;
 }
 
 h1 {
@@ -51,4 +52,14 @@ h1 {
         font-size: 30px;
         color: var(--color-dark);
     }
+}
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
 }

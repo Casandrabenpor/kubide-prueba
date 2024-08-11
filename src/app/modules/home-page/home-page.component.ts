@@ -2,10 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { Character as Character } from '../../models/character.model';
 import { CharacterApiService } from '../../character-api.service';
 
-
-
-
-
 @Component({
   selector: 'app-home-page',
   templateUrl: './home-page.component.html',
@@ -15,15 +11,18 @@ export class HomePageComponent implements OnInit{
   characters: Character[] = [];
   charactersToShow: Character[] = []; 
   nextPageUrl: string = "";
+  isLoading: boolean = false;
 
 
   constructor(private CharacterApiService: CharacterApiService) {}
   //Coge el get de los datos de la api
   ngOnInit(): void {
+    this.isLoading = true;
     this.CharacterApiService.getCharacters().subscribe(apiResponse => {
       this.characters = apiResponse.results;
       this.charactersToShow = apiResponse.results;
       this.nextPageUrl = apiResponse.info.next;
+      this.isLoading = false;
     });
   }
 
@@ -38,6 +37,7 @@ export class HomePageComponent implements OnInit{
   }
   //Mostrar mas
   showMore():void{
+    this.isLoading = true;
     //llamada al servicio
     // obtienes la respuesta y actualizas los 3 valores(characters, charactersToShow y Nextpageurl)
     this.CharacterApiService.getNextCharacters(this.nextPageUrl)
@@ -45,6 +45,7 @@ export class HomePageComponent implements OnInit{
       this.characters = this.characters.concat(apiResponse.results);
       this.charactersToShow = this.characters;
       this.nextPageUrl = apiResponse.info.next;
+      this.isLoading = false;
     });
   }
 }

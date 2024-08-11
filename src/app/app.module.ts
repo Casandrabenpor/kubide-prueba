@@ -7,7 +7,7 @@ import {  provideHttpClient } from '@angular/common/http';
 import { CharacterDetailsComponent } from './shared/components/character-details/character-details.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FooterComponent } from './shared/components/footer/footer.component';
-
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 @NgModule({
   declarations: [
     AppComponent,
@@ -19,7 +19,8 @@ import { FooterComponent } from './shared/components/footer/footer.component';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    ReactiveFormsModule 
+    ReactiveFormsModule ,
+    MatProgressSpinnerModule
   ],
   providers: [
     provideHttpClient()
