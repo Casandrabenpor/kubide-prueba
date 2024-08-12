@@ -38,8 +38,6 @@ ngOnInit() {
   // Get a id de la ruta
   const routeParams = this.route.snapshot.paramMap;
   const characterIdFromRoute = routeParams.get('characterId');
-  console.log(`characterIdFromRoute: ${characterIdFromRoute}`);
-
   const characterId = characterIdFromRoute ? parseInt(characterIdFromRoute, 10) : null;
 
   if (characterId !== null) {

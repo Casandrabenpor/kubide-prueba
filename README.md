@@ -1,27 +1,32 @@
-# PruebaKubide
+# PruebaKubide | RICK AND MORTY
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.1.4.
+Este proyecto está desarrollado con Angular CLI versión 18.1.4. 
+Es una aplicación web que consume la API de Rick and Morty para mostrar una lista de personajes de la serie.
 
-## Development server
+## Características
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+- **Lista de personajes:** Muestra una lista de personajes obtenidos de la API de Rick and Morty.
+- **Buscador de personajes:** Permite buscar personajes por nombre.
+- **Cargar más personajes:** Incluye un botón "Mostrar más" para cargar 20 personajes adicionales.
+- **Detalles del personaje:** Al hacer clic en el nombre de un personaje, se redirige a una página de detalles donde se muestra información específica del personaje basado en su ID.
+- **Diseño adaptable:** La interfaz es responsive, adecuada para todo tipo de dispositivos.
 
-## Code scaffolding
+## Demostración en vivo
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+https://kubide-prueba.vercel.app/
 
-## Build
+## Tecnologías utilizadas
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+- **Angular**
+- **SCSS**
 
-## Running unit tests
+## Instalación y uso
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+1. Clona este respositorio
+2. Instala las dependencias necesarias con:
+ npm install
+3. Inicia el servidor de desarrollo con;
+ ng serve
+ 4. Abre tu navegador y ve a http://localhost:4200/ para ver la aplicación en funcionamiento.
 
-## Running end-to-end tests
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
