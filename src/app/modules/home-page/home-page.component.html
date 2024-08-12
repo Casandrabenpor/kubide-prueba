@@ -12,7 +12,6 @@
 </div>
 <section class="card-collection">
     <div *ngFor="let character of charactersToShow" class="card">
-
         <img [src]="character.image" alt="{{ character.name }}" />
         <div class="name_card">
             <a [routerLink]="['/characters', character.id]">
