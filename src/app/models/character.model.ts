@@ -7,5 +7,10 @@ export interface Character {
   species: string;
   type: string;
   gender: string;
+  location:CharacterLocation;
 }
 
+export interface CharacterLocation {
+  name: string;
+  url: string;
+}
