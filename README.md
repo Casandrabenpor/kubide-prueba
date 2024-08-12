@@ -25,7 +25,7 @@ https://kubide-prueba.vercel.app/
 1. Clona este respositorio
 2. Instala las dependencias necesarias con:
  npm install
-3. Inicia el servidor de desarrollo con;
+3. Inicia el servidor de desarrollo con:
  ng serve
  4. Abre tu navegador y ve a http://localhost:4200/ para ver la aplicación en funcionamiento.
 
