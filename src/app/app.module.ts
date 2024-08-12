@@ -5,7 +5,6 @@ import { AppComponent } from './app.component';
 import { HomePageComponent } from './modules/home-page/home-page.component';
 import {  provideHttpClient } from '@angular/common/http';
 import { CharacterDetailsComponent } from './shared/components/character-details/character-details.component';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FooterComponent } from './shared/components/footer/footer.component';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 @NgModule({
@@ -18,8 +17,6 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule,
-    ReactiveFormsModule ,
     MatProgressSpinnerModule
   ],
   providers: [

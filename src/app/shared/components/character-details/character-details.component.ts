@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Character } from '../../../models/character.model';
-import { FormBuilder, FormGroup } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
 import { CharacterApiService } from '../../../character-api.service';
 import { Location } from '@angular/common';
@@ -13,22 +12,12 @@ import { Location } from '@angular/common';
 })
 export class CharacterDetailsComponent implements OnInit {
 character: Character | undefined;
-formGroup: FormGroup;
 
 constructor(
   private route: ActivatedRoute,
   private CharacterApiService: CharacterApiService,
-  formBuilder: FormBuilder,
   private location: Location
 ) {
-  this.formGroup = formBuilder.group({
-    name: [''],
-    status: [''],
-    species: [''],
-    type: [''],
-    gender:['']
-   
-  });
 }
 //Botón función atras
 goBack() {
@@ -44,15 +33,8 @@ ngOnInit() {
     // Encontrar el id correspondiente para la ruta
     this.CharacterApiService.getCharacter(characterId).subscribe((character) => {
       this.character = character;
-      this.formGroup.setValue({
-        name: character.name,
-        status: character.status,
-        species: character.species,
-        type: character.type,
-        gender: character.gender
-
-    });
-  });
+      });
+    };
   }
 }
-}
+
