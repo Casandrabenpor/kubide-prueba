@@ -16,7 +16,7 @@ export class HomePageComponent implements OnInit{
 
 
   constructor(private CharacterApiService: CharacterApiService) {}
-  //Coge el get de los datos de la api
+  //Obtiene los datos de la api del servicio
   ngOnInit(): void {
     this.isLoading = true;
     this.CharacterApiService.getCharacters().subscribe(apiResponse => {
@@ -27,18 +27,19 @@ export class HomePageComponent implements OnInit{
     });
   }
 
-  // SEARCH
-  searchCharacter(event: any) {
-    if (!event.target.value) {
+  searchCharacter(event: Event) {
+    const input = event.target as HTMLInputElement;
+
+    if (!input.value) {
       this.charactersToShow = this.characters;
       this.searchText = "";
     }
-    this.searchText = event.target.value.toUpperCase();
+    this.searchText = input.value.toUpperCase();
     this.charactersToShow = this.characters.filter((character) =>
-      character.name.toUpperCase().includes(event.target.value.toUpperCase())
+      character.name.toUpperCase().includes(input.value.toUpperCase())
     );
   }
-  //Mostrar mas
+
   showMore():void{
     this.isLoading = true;
     //llamada al servicio

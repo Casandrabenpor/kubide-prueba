@@ -12,7 +12,7 @@ export class CharacterApiService {
   constructor(private httpClient: HttpClient) {}
 
 
-getCharacter(id: number | null): Observable<Character> {
+getCharacter(id: number): Observable<Character> {
   let endpoint = `${this.API_CHARACTER_ENDPOINT}/${id}`;
 
   return this.httpClient.get<Character>(endpoint);

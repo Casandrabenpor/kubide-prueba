@@ -1,3 +1,5 @@
+import { CharacterLocation } from "./characterLocation.model";
+
 export interface Character {
   id: number;
   name: string;
@@ -8,9 +10,4 @@ export interface Character {
   type: string;
   gender: string;
   location:CharacterLocation;
-}
-
-export interface CharacterLocation {
-  name: string;
-  url: string;
 }
